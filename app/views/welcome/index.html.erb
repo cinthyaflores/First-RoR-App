@@ -1,0 +1,8 @@
+<h1>RUTA -> Welcome#index</h1>
+<!-- AQUI SE PUEDE INGRESAR CODIGO HTML Y RUBY EMBEBIDO, USANDO <%%> O <%=%> (PARA IMPRIMIR)-->
+<% [1,2,3,4].each do |num| %> <!-- METODO DE RUBY USANDO <%%> PARA PONERLO EN HTML. DENTRO PUSE <%=%> PARA DESPLEGAR LO DEL METODO-->
+    <br>
+    <%="NUMERO #{num} "%>
+<%end #DENTRO DEL CICLO ^ SE PONE LO QUE QUERAMOS HACER%>
+<% nombre = "Cinthya "%>
+<h3><%= "Hola #{nombre}"%></h3>
