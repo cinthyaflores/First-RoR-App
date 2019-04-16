@@ -1,0 +1,19 @@
+<div class = "container d-flex align-items-center flex-column m-4">
+    <h1>CREAR UN NUEVO ARTÍCULO</h1>
+    <%= form_for(@article) do |f| %> <!-- CREA UN FORMULARIO PARA LA VARIABLE @articles -->
+    <!--SI EL ARTICULO NO SE GUARDO POR LAS VALIDACIONES, SE GENERA UN ATRIBUTO ERRORS-->
+        <%@article.errors.each do |value, message|%> <!--EL ERROR TIENE UN VALOR Y UN MENSAJE (EL VALOR QUE TIENE EL ERROR Y EL MENSAJE DE ERROR)-->
+            <p><%=message%></p> <!-- DESPLEGAR LOS MENSAJES DE ERROR QUE SE GENERARON ANTERIORMENTE-->
+        <%end%>
+        <div class = "field">
+            <%= f.text_field :title, placeholder: "Título", class:"form-control m-4" %> <!-- PRIMERO SE PONE EL NOMBRE DEL ATRIBUTO EN LA BASE Y DESPUES SE PONEN ATRIBUTOS HTML-->
+        </div>
+        <div class = "field">
+            <%= f.text_area :body, placeholder: "Cuerpo",class:"form-control m-4 " %> <!-- PRIMERO SE PONE EL NOMBRE DEL ATRIBUTO EN LA BASE -->
+        </div>
+        <div class = "field">
+            <%= f.submit "Guardar", class:"btn btn-primary m-2" %> <!-- PRIMERO SE PONE EL NOMBRE DEL ATRIBUTO EN LA BASE -->
+        </div>
+        <%= link_to  "Regresar", welcome_index_path, class:"btn btn-primary m-2" %>
+    <% end %> 
+</div>

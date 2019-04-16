@@ -1,0 +1,13 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+<div class = "container"> <!--AQUI LE DOY ESTILO EN LAS STYLESHEETS-->
+    <%@articles.each do |article|%> <!-- DESPLEGAR CADA ARTÍCULO --> 
+            <div class = "row">
+                <div class = "col col-6">
+                    <h1><%=article.title%></h1>     
+                    <h5><%=article.body%></h5>
+                </div>
+            </div> 
+    <%end%>
+    <%= link_to  "Regresar", welcome_index_path, class:"btn btn-primary" %>
+ </div>

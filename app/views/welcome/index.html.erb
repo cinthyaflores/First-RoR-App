@@ -1,8 +1,14 @@
-<h1>RUTA -> Welcome#index</h1>
 <!-- AQUI SE PUEDE INGRESAR CODIGO HTML Y RUBY EMBEBIDO, USANDO <%%> O <%=%> (PARA IMPRIMIR)-->
+<%if user_signed_in?%>
+    <h2>Hola <%= current_user.email %>!</h2>
+<%else%>
+    <h2>Hola! Inicia sesion pls</h2>
+<%end%>
 <% [1,2,3,4].each do |num| %> <!-- METODO DE RUBY USANDO <%%> PARA PONERLO EN HTML. DENTRO PUSE <%=%> PARA DESPLEGAR LO DEL METODO-->
     <br>
     <%="NUMERO #{num} "%>
 <%end #DENTRO DEL CICLO ^ SE PONE LO QUE QUERAMOS HACER%>
-<% nombre = "Cinthya"%>
-<h3><%= "Hola #{nombre}"%></h3>
+
+<h3>RUTA -> Welcome#index</h3>
+<%= link_to  "AGREGAR ARTICULO", articles_new_path, class:"btn btn-primary"%>
+<%= link_to  "VER ARTÍCULOS REGISTRADOS", articles_path, class:"btn btn-primary" %>
