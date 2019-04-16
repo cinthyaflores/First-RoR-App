@@ -1,0 +1,12 @@
+<!-- PARTIAL. PARTE DE CODIGO PARA AGREGAR AL LAYOUT CON UN RENDER -->
+ <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">My First Blog</a>
+    <%if user_signed_in? %>
+        <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "btn btn-primary", confirm: "JEJEJ VA?" %>
+    <%else%>
+        <div>
+            <%= link_to "Registrarse", new_user_registration_path, class: "btn btn-primary"%>
+            <%= link_to "Ingresar", new_user_session_path, class: "btn btn-primary" %>
+        <div>
+    <%end%>
+</nav>
